@@ -133,3 +133,37 @@ html{scroll-behavior:smooth}
 }
 
 .btn.disabled{opacity:.6; pointer-events:none}
+
+.experience-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.xp-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.xp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.xp-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.xp-meta {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.xp-card p {
+  margin: 0;
+  color: var(--muted);
+}
