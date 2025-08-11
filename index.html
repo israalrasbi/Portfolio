@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Isra | Portfolio</title>
+    <meta name="description" content="Portfolio of Isra — Java & React developer with a passion for AI and security." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="#" class="logo">Isra<span>.</span></a>
+            <button class="theme-toggle" aria-label="Toggle dark mode" id="themeBtn">🌓</button>
+            <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a class="btn" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="home" class="section hero container">
+            <div class="hero-text">
+                <h1>Hi, I’m <span class="accent">Isra</span> 👋</h1>
+                <p class="lead">
+                    Software developer with a cybersecurity backbone and an AI streak.
+                    I ship secure backends with Java/Spring Boot, build clean UIs with React, and experiment with AI
+                    when it makes real impact.
+                </p>
+
+                <div class="cta">
+                    <a class="btn" href="#projects">See my work</a>
+                    <a class="btn btn-ghost" href="#contact">Contact me</a>
+                </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <!-- Replace with your image if you like -->
+                <div class="blob"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section container">
+            <h2 class="section-title">About</h2>
+            <div class="grid-2">
+                <div>
+                    <p>
+                        I’m Isra — a developer blending <strong>software engineering</strong>,
+                        <strong>cybersecurity</strong>, and <strong>applied AI</strong>.
+                        I like problems that force me to think deeply and test my limits, and I prefer building things
+                        that are actually used.
+                    </p>
+                    <p>
+                        Highlights: I built a <strong>Maven Dependency Analyzer</strong> that generates SBOMs, pushes
+                        them to Dependency-Track,
+                        pulls back CVEs, and uses AI to suggest fixes. For my FYP, I built an <strong>AI-Driven Threat
+                            Hunting</strong> system:
+                        an autoencoder that learns normal network behavior and flags anomalies using a dataset I curated
+                        myself.
+                    </p>
+                    <p>
+                        Outside of work: coffee addict ☕, cat enthusiast 🐾, mystery show binge-watcher 🕵️‍♀️, and
+                        lifelong learner.
+                        I don’t claim to be a UX pro (yet!), but I care a lot about clarity and developer-friendly
+                        experiences.
+                    </p>
+                </div>
+                <ul class="about-list">
+                    <li>📍 Muscat, Oman</li>
+                    <li>🎓 BSc in Computer Science — specialization in <strong>Cybersecurity</strong></li>
+                    <li>✅ HCIA-AI Certified</li>
+                    <li>🧰 Java · Spring Boot · Security · React (actively leveling up)</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- SKILLS -->
+        <section id="skills" class="section container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills">
+                <div class="chip">Java</div>
+                <div class="chip">Spring Boot</div>
+                <div class="chip">REST APIs</div>
+                <div class="chip">React</div>
+                <div class="chip">HTML</div>
+                <div class="chip">CSS (Grid/Flex)</div>
+                <div class="chip">JavaScript (ES6+)</div>
+                <div class="chip">Git & Docker</div>
+                <div class="chip">Security basics</div>
+            </div>
+        </section>
+
+        <!-- PROJECTS (cards injected from JS) -->
+        <section id="projects" class="section container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid" id="projectsGrid" aria-live="polite"></div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section container">
+            <h2 class="section-title">Contact</h2>
+            <div class="form" role="group" aria-label="Contact options">
+                <p style="margin:0;">
+                    Prefer email? Reach me at
+                    <a href="mailto:israalrasbi@gmail.com" class="btn btn-ghost">israalrasbi@gmail.com</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-row">
+            <p>© <span id="year"></span> Isra. All rights reserved.</p>
+            <a href="#home" class="back-to-top">↑ Back to top</a>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
