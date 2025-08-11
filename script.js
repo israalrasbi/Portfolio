@@ -18,28 +18,29 @@ navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => na
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // --- Projects (DOM manipulation) ---
-const GITHUB_BASE = "https://github.com/<your-username>"; // <-- put your GitHub username here
+const GITHUB_BASE = "https://github.com/israalrasbi"; 
 
 const projects = [
   {
     title: "Maven Dependency Analyzer",
-    desc: "Generates CycloneDX SBOMs from Maven, sends to Dependency-Track, aggregates CVEs, and uses AI to suggest fixes.",
-    tags: ["Spring Boot", "Docker", "AI", "Security"],
-    url: `${GITHUB_BASE}/maven-dependency-analyzer`
+    desc: "Spring Boot backend that scans Java project dependencies for security vulnerabilities. Generates CycloneDX SBOMs, integrates with OWASP Dependency-Track, and uses AI to suggest fixes.",
+    tags: ["Spring Boot", "Docker", "CycloneDX", "Security", "AI"],
+    url: `${GITHUB_BASE}/MavenDependencyAnalyzer`
   },
   {
-    title: "RS232 Data Listener",
-    desc: "Robust serial listener: parses packets, validates, logs to CSV/DB, and emits UI status events.",
-    tags: ["Java", "Serial", "Oracle"],
-    url: `${GITHUB_BASE}/rs232-data-listener`
+    title: "RS-232 Reader System",
+    desc: "JavaFX desktop app that extracts and monitors serial (RS-232) port data in real time. Parses STX/ETX-framed packets, logs valid messages to CSV, and pushes them to an Oracle database.",
+    tags: ["Java", "JavaFX", "Serial", "Oracle"],
+    url: null // private / not public
   },
   {
-    title: "AI-Driven Threat Hunting (FYP)",
-    desc: "Autoencoder learns normal network traffic and flags anomalies. Custom dataset, focus on practical detectability.",
-    tags: ["Python", "ML", "Security"],
+    title: "AI-Driven Threat Hunting",
+    desc: "Final-year project: built a system using Scapy to collect and classify network traffic. Trained an deep-learning model  to detect and categorize abnormal traffic using a custom dataset.",
+    tags: ["Python", "ML", "Security", "Scapy"],
     url: null // private / not public
   }
 ];
+
 
 const grid = document.getElementById("projectsGrid");
 projects.forEach(p => {
