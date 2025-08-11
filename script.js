@@ -18,7 +18,7 @@ navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => na
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // --- Projects (DOM manipulation) ---
-const GITHUB_BASE = "https://github.com/israalrasbi"; 
+const GITHUB_BASE = "https://github.com/israalrasbi";
 
 const projects = [
   {
@@ -31,21 +31,20 @@ const projects = [
     title: "RS-232 Reader System",
     desc: "JavaFX desktop app that extracts and monitors serial (RS-232) port data in real time. Parses STX/ETX-framed packets, logs valid messages to CSV, and pushes them to an Oracle database.",
     tags: ["Java", "JavaFX", "Serial", "Oracle"],
-    url: null // private / not public
+    url: null
   },
   {
     title: "AI-Driven Threat Hunting",
-    desc: "Final-year project: built a system using Scapy to collect and classify network traffic. Trained an deep-learning model  to detect and categorize abnormal traffic using a custom dataset.",
+    desc: "Final-year project: built a system using Scapy to collect and classify network traffic. Trained a deep-learning model to detect and categorize abnormal traffic using a custom dataset.",
     tags: ["Python", "ML", "Security", "Scapy"],
-    url: null // private / not public
+    url: null
   }
 ];
-
 
 const grid = document.getElementById("projectsGrid");
 projects.forEach(p => {
   const card = document.createElement("article");
-  card.className = "card";
+  card.className = "card glass card-glow";
   const linkHtml = p.url
     ? `<a class="btn btn-ghost" href="${p.url}" target="_blank" rel="noopener" aria-label="Open ${p.title} on GitHub">GitHub</a>`
     : `<button class="btn btn-ghost disabled" aria-disabled="true" title="This project is not public">Private / not public</button>`;
