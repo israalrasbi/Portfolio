@@ -12,6 +12,8 @@
   --glow-strong: rgba(139, 92, 246, .9);
   --font-sans: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --font-title: "Preahvihear", var(--font-sans);
+    --bg-deep: #080112;        /* bottom of page in dark */
+  --header-tint: #000;       /* header blur tint in dark */
 }
 
 :root.light{
@@ -26,7 +28,11 @@
   --border:rgba(0,0,0,.12);
   --glow: rgba(124, 58, 237, .35);
   --glow-strong: rgba(124, 58, 237, .55);
+   --bg-deep: #ffffff;        /* bottom of page in light */
+  --header-tint: #fff;       /* header blur tint in light */
 }
+
+:root.light body::before{ opacity:.04; }
 
 /* RESET */
 *{box-sizing:border-box}
@@ -39,7 +45,7 @@ body{
   background:
     radial-gradient(1200px 800px at 20% -10%, var(--bg-3), transparent 60%),
     radial-gradient(1000px 700px at 100% 0%, var(--bg-2), transparent 55%),
-    linear-gradient(180deg, var(--bg-1), #080112 60%);
+    linear-gradient(180deg, var(--bg-1), var(--bg-deep) 60%);
   position:relative;
   overflow-x:hidden;
 }
@@ -66,7 +72,7 @@ body::before{
 /* Header */
 .site-header{
   position:sticky; top:0; z-index:20;
-  background: color-mix(in oklab, #000, transparent 60%);
+  background: color-mix(in oklab, var(--header-tint), transparent 60%);
   border-bottom:1px solid var(--border);
   backdrop-filter: blur(10px);
 }
