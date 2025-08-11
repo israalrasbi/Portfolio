@@ -230,13 +230,27 @@ input:focus, textarea:focus{outline:2px solid color-mix(in oklab, var(--accent),
 @media (max-width: 640px){
   .projects-grid{grid-template-columns: 1fr}
   .nav-toggle{display:inline-block}
+
   .nav-links{
-    position:absolute; right:4%; top:60px; background:rgba(0,0,0,.35);
-    border:1px solid var(--border); padding:10px; border-radius:12px; backdrop-filter: blur(10px);
-    display:none; flex-direction:column; width:min(240px, 90vw)
+    position:absolute; right:4%; top:60px;
+    background:rgba(0,0,0,.35);
+    border:1px solid var(--border); padding:10px; border-radius:12px;
+    backdrop-filter: blur(10px);
+    display:flex; flex-direction:column; width:min(240px, 90vw);
+
+    /* HIDDEN by default */
+    opacity:0; visibility:hidden; pointer-events:none;
+    transform: translateY(-8px) scale(.98);
+    transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+    z-index: 30;
   }
-  .nav-links.open{display:flex}
+  .nav-links.open{
+    opacity:1; visibility:visible; pointer-events:auto;
+    transform: none;
+    transition: opacity .18s ease, transform .18s ease, visibility 0s;
+  }
 }
+
 
 .btn.disabled{opacity:.6; pointer-events:none}
 

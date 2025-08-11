@@ -10,9 +10,38 @@ document.getElementById("themeBtn").addEventListener("click", () => {
 
 // --- Mobile nav ---
 const navToggle = document.getElementById("navToggle");
-const navLinks = document.getElementById("navLinks");
-navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
-navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
+const navLinks  = document.getElementById("navLinks");
+
+const closeNav = () => {
+  navLinks.classList.remove("open");
+  navToggle.setAttribute("aria-expanded", "false");
+};
+
+navToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const isOpen = navLinks.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+// Close on link click
+navLinks.querySelectorAll("a").forEach(a =>
+  a.addEventListener("click", closeNav)
+);
+
+// Close on outside click
+document.addEventListener("click", (e) => {
+  if (!navLinks.contains(e.target) && e.target !== navToggle) closeNav();
+});
+
+// Close on scroll and on Esc
+window.addEventListener("scroll", closeNav, { passive: true });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeNav(); });
+
+// Close if user rotates / resizes to desktop
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 640) closeNav();
+});
+
 
 // --- Year ---
 document.getElementById("year").textContent = new Date().getFullYear();
